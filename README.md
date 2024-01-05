@@ -12,7 +12,7 @@ gem install rsnchat
 ## Usage GPT4
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
@@ -27,7 +27,7 @@ end
 ## Usage OpenChat
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
@@ -42,7 +42,7 @@ end
 ## Usage Bard
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
@@ -57,7 +57,7 @@ end
 ## Usage Gemini
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
@@ -72,7 +72,7 @@ end
 ## Usage LlaMa
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
@@ -87,7 +87,7 @@ end
 ## Usage Mixtral
 
 ```ruby
-require 'rsnchat'
+require 'rsn_chat'
 
 rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
 
