@@ -42,6 +42,10 @@ class RsnChat
     call_chat_method('llama', prompt)
   end
 
+  def codellama(prompt)
+    call_chat_method('codellama', prompt)
+  end
+
   def gemini(prompt)
     call_chat_method('gemini', prompt)
   end
@@ -124,13 +128,13 @@ def start_chat(rsn_chat, response)
 end
 
 def prompt_chat_method(rsn_chat)
-  print('Select a chat method (GPT, BARD, OPENCHAT, LLAMA, GEMINI, MIXTRAL), or type "exit" to exit: '.cyan)
+  print('Select a chat method (GPT, BARD, OPENCHAT, LLAMA, CODELLAMA, GEMINI, MIXTRAL), or type "exit" to exit: '.cyan)
   method = gets.chomp.upcase
 
   case method
   when 'EXIT'
     puts "\nExiting RsnChat CLI. Goodbye!\n".yellow
-  when 'GPT', 'BARD', 'OPENCHAT', 'LLAMA', 'GEMINI', 'MIXTRAL'
+  when 'GPT', 'BARD', 'OPENCHAT', 'LLAMA', 'CODELLAMA' 'GEMINI', 'MIXTRAL'
     prompt_user(method, rsn_chat)
   else
     puts 'Invalid chat method. Please select GPT, BARD, OPENCHAT, LLAMA, GEMINI, MIXTRAL, or type "exit" to exit.'.red

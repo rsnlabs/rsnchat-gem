@@ -72,6 +72,19 @@ class RsnChat
       raise "RsnChat LlaMa Error: #{e.response}"
     end
   end
+
+  def codellama(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/codellama', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat CodeLlaMa Error: #{e.response}"
+    end
+  end
   
   def mixtral(prompt)
     begin
@@ -83,6 +96,7 @@ class RsnChat
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat Mixtral Error: #{e.response}"
+
     end
   end
 end
