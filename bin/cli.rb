@@ -16,7 +16,7 @@ class RsnChat
       payload = { key: api_key }.to_json
       headers = { content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/validate', payload, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/validate', payload, headers)
     
       return response if response.code == 200
 
@@ -57,7 +57,7 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post("https://ai.rnilaweera.ovh/api/v1/user/#{method}", payload.to_json, headers)
+      response = RestClient.post("https://api.rsnai.org/api/v1/user/#{method}", payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat #{method.capitalize} Error: #{e.response}"

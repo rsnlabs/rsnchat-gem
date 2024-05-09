@@ -14,10 +14,23 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/gpt', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/gpt', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
-      raise "RsnChat GPT Error: #{e.response}"
+      raise "RsnChat GPT3 Error: #{e.response}"
+    end
+  end
+  
+  def gpt4(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/gpt4', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat GPT4 Error: #{e.response}"
     end
   end
   
@@ -27,7 +40,7 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/openchat', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/openchat', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat OpenChat Error: #{e.response}"
@@ -40,7 +53,7 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/bard', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/bard', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat Bard Error: #{e.response}"
@@ -53,7 +66,7 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/gemini', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/gemini', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat Gemimi Error: #{e.response}"
@@ -66,10 +79,23 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/llama', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/llama', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat LlaMa Error: #{e.response}"
+    end
+  end
+  
+  def codellama(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/codellama', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat CodeLlama Error: #{e.response}"
     end
   end
   
@@ -79,10 +105,49 @@ class RsnChat
       payload = { prompt: prompt }
       headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
 
-      response = RestClient.post('https://ai.rnilaweera.ovh/api/v1/user/mixtral', payload.to_json, headers)
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/mixtral', payload.to_json, headers)
       return JSON.parse(response.body)
     rescue RestClient::ExceptionWithResponse => e
       raise "RsnChat Mixtral Error: #{e.response}"
+    end
+  end
+  
+  def claude(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/claude', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat Claude3 Error: #{e.response}"
+    end
+  end
+  
+  def naomi(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/naomi', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat Naomi Error: #{e.response}"
+    end
+  end
+  
+  def zerotwo(prompt)
+    begin
+      #puts "DEBUG: Prompt before request: #{prompt}"
+      payload = { prompt: prompt }
+      headers = { Authorization: "Bearer #{@api_key}", content_type: :json }
+
+      response = RestClient.post('https://api.rsnai.org/api/v1/user/zerotwo', payload.to_json, headers)
+      return JSON.parse(response.body)
+    rescue RestClient::ExceptionWithResponse => e
+      raise "RsnChat ZeroTwo Error: #{e.response}"
     end
   end
 end

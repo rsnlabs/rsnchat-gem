@@ -1,6 +1,6 @@
 # rsnchat
 
-This package package for interacting with GPT4-based chat services, OpenChat, Bard, Gemini, LlaMa and Mixtral without restrictions or limits
+This package package for interacting with GPT4-based chat services, OpenChat, Bard, Gemini, LlaMa Mixtral and etc... without restrictions or limits
 
 ## Installation
 
@@ -9,15 +9,42 @@ This package package for interacting with GPT4-based chat services, OpenChat, Ba
 gem install rsnchat
 ```
 
+# APIKEY
+
+Discord : [https://discord.gg/r5QWdKfQxr](https://discord.gg/r5QWdKfQxr)
+
+**Example CLI Command**
+```hs
+rsnchat
+```
+
+Join discord server and create account with **/new** slash command and get your apikey with **/key** slash command for free!
+
+
+## Usage GPT3
+
+```ruby
+require 'rsn_chat'
+
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
+
+begin
+  response = rsn_chat.gpt('Hello what is your name?')
+  puts "Response: #{response['message']}"
+rescue RuntimeError => e
+  puts "Error: #{e.message}"
+end
+```
+
 ## Usage GPT4
 
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
-  response = rsn_chat.gpt('Hello what is your name?')
+  response = rsn_chat.gpt4('Hello what is your name?')
   puts "Response: #{response['message']}"
 rescue RuntimeError => e
   puts "Error: #{e.message}"
@@ -29,7 +56,7 @@ end
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
   response = rsn_chat.openchat('Hello what is your name?')
@@ -44,7 +71,7 @@ end
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
   response = rsn_chat.bard('Hello what is your name?')
@@ -59,7 +86,7 @@ end
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
   response = rsn_chat.gemini('Hello what is your name?')
@@ -74,10 +101,25 @@ end
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
   response = rsn_chat.llama('Hello what is your name?')
+  puts "Response: #{response['message']}"
+rescue RuntimeError => e
+  puts "Error: #{e.message}"
+end
+```
+
+## Usage CodeLlama
+
+```ruby
+require 'rsn_chat'
+
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
+
+begin
+  response = rsn_chat.codellama('Hello what is your name?')
   puts "Response: #{response['message']}"
 rescue RuntimeError => e
   puts "Error: #{e.message}"
@@ -89,7 +131,7 @@ end
 ```ruby
 require 'rsn_chat'
 
-rsn_chat = RsnChat.new('chatgpt_××××××××××××××××××××××')
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
 
 begin
   response = rsn_chat.mixtral('Hello what is your name?')
@@ -99,13 +141,47 @@ rescue RuntimeError => e
 end
 ```
 
-# APIKEY
+## Usage Claude (premium)
 
-Discord : [https://discord.gg/r5QWdKfQxr](https://discord.gg/r5QWdKfQxr)
+```ruby
+require 'rsn_chat'
 
-**Example CLI Command**
-```hs
-rsnchat
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
+
+begin
+  response = rsn_chat.claude('Hello what is your name?')
+  puts "Response: #{response['message']}"
+rescue RuntimeError => e
+  puts "Error: #{e.message}"
+end
 ```
 
-Join discord server and create account with **/new** slash command and get your apikey with **/key** slash command for free!
+## Usage Naomi (ai girlfriend) (premium)
+
+```ruby
+require 'rsn_chat'
+
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
+
+begin
+  response = rsn_chat.naomi('Hello what is your name?')
+  puts "Response: #{response['message']}"
+rescue RuntimeError => e
+  puts "Error: #{e.message}"
+end
+```
+
+## Usage ZeroTwo (ai girl) (premium)
+
+```ruby
+require 'rsn_chat'
+
+rsn_chat = RsnChat.new('rsnai_××××××××××××××××××××××')
+
+begin
+  response = rsn_chat.zerotwo('Hello what is your name?')
+  puts "Response: #{response['message']}"
+rescue RuntimeError => e
+  puts "Error: #{e.message}"
+end
+```
